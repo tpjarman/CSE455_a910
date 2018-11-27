@@ -5,7 +5,6 @@ using System.Net.Http;
 using System.Net;
 using System.IO;
 using System.Runtime.Serialization;
-using CSE445_A9A10.ServiceReference1;
 
 namespace CSE445_A9A10.Members
 {
@@ -19,7 +18,7 @@ namespace CSE445_A9A10.Members
         protected void CompareSites_Click(object sender, EventArgs e)
         {
             //call the remote service to run the compare code and display to the user
-            Service1Client client = new ServiceReference1.Service1Client();
+            WordService.Service1Client client = new WordService.Service1Client();
             int score = client.SiteCompareTool(Website1TextBox.Text, Website2TextBox.Text);
             WebsiteResultLabel.Text = "Score is: " + score.ToString();
         }
