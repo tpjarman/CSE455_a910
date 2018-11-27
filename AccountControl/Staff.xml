@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<StaffMembers>
+    <Staff>
+        <First>John</First>
+        <Last>Doe</Last>
+        <Username>123</Username>
+        <Password>321</Password>
+        <Admin>False</Admin>
+    </Staff>
+    <Staff>
+        <First>Teaching</First>
+        <Last>Assistant</Last>
+        <Username>TA</Username>
+        <Password>Cse445ta!</Password>
+        <Admin>True</Admin>
+    </Staff>
+    <Staff>
+        <First>Joshua</First>
+        <Last>McHenry</Last>
+        <Username>J</Username>
+        <Password>123</Password>
+        <Admin>True</Admin>
+    </Staff>
+</StaffMembers>

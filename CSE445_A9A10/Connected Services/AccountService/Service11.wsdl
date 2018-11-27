@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://webstrar55.fulton.asu.edu/Page8/AccountControl.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://webstrar55.fulton.asu.edu/Page8/AccountControl.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://webstrar55.fulton.asu.edu/Page8/AccountControl.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IControl_ValidateStaff_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateStaff" />
+  </wsdl:message>
+  <wsdl:message name="IControl_ValidateStaff_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateStaffResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControl_ValidateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUser" />
+  </wsdl:message>
+  <wsdl:message name="IControl_ValidateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControl_CreateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="IControl_CreateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControl_RemoveUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUser" />
+  </wsdl:message>
+  <wsdl:message name="IControl_RemoveUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IControl_ListMembers_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListMembers" />
+  </wsdl:message>
+  <wsdl:message name="IControl_ListMembers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListMembersResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IControl">
+    <wsdl:operation name="ValidateStaff">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControl/ValidateStaff" message="tns:IControl_ValidateStaff_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControl/ValidateStaffResponse" message="tns:IControl_ValidateStaff_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControl/ValidateUser" message="tns:IControl_ValidateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControl/ValidateUserResponse" message="tns:IControl_ValidateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControl/CreateUser" message="tns:IControl_CreateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControl/CreateUserResponse" message="tns:IControl_CreateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControl/RemoveUser" message="tns:IControl_RemoveUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControl/RemoveUserResponse" message="tns:IControl_RemoveUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListMembers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControl/ListMembers" message="tns:IControl_ListMembers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControl/ListMembersResponse" message="tns:IControl_ListMembers_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IControl" type="tns:IControl">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidateStaff">
+      <soap:operation soapAction="http://tempuri.org/IControl/ValidateStaff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUser">
+      <soap:operation soapAction="http://tempuri.org/IControl/ValidateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <soap:operation soapAction="http://tempuri.org/IControl/CreateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUser">
+      <soap:operation soapAction="http://tempuri.org/IControl/RemoveUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListMembers">
+      <soap:operation soapAction="http://tempuri.org/IControl/ListMembers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IControl" binding="tns:BasicHttpBinding_IControl">
+      <soap:address location="http://webstrar55.fulton.asu.edu/Page8/AccountControl.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
